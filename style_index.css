@@ -116,3 +116,19 @@ details[open] summary::after {
     flex-direction: column;
     align-items: center;
 }
+
+/*CLASSE CSS DO FORMULARIO*/
+.formszinho{
+    /*background-color: lightblue;*/
+    text-align: center;
+    color: black;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+/*DEIXAR A TAG textarea COM TAMANHO FIXO*/
+.accordion textarea{
+    width: 100%;
+    box-sizing: border-box;/* Garante que margens e preenchimentos não ultrapassem o limite */
+    resize: none;/*Faz a tag textarea NÃO poder ser redimensionada.*/
+    /*width: 300px;/*Largura fixa. Tentar deixar a mesma largura do cartao.*/
+}
