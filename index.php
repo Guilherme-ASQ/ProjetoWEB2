@@ -101,9 +101,15 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             //Recebe o email enviado pelo formulário
             $email = $_POST["email"];
+            $nome = $_POST["nome"];
+            $telefone = $_POST["telefone"];
+            $mensagem = $_POST["mensagem"];
 
             //Mostrar o email recebido
             echo "E-mail recebido: " . $email;
+            echo "Nome recebido: " . $nome;
+            echo "Telefone recebido: " . $telefone;
+            echo "Mensagem recebida: " . $mensagem;
         }
         ?>
     </BODY>
