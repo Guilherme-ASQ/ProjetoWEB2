@@ -70,20 +70,20 @@
 
                         <!--DIV do formulário-->
                         <div class="formszinho">
-                            <form method="POST">
+                            <form method="post">
                                 <label for="nome">Nome:</label><br>
                                 <input type="text" name="nome" id="nome" placeholder="Digite seu nome"><br>
 
-                                <label for="email">E-mail:</label><br>
-                                <input type="email" name="email" id="email" placeholder="Digite seu E-mail"><br>
+                                <label for="temail">E-mail:</label><br>
+                                <input type="email" name="email" id="temail" placeholder="Digite seu E-mail"><br>
 
                                 <!--Campo de Telefone, não vi que tinha que ter esse.-->
                                 <label for="telefone">Telefone ou WhatsApp:</label><br>
                                 <input type="tel" name="telefone" id="telefone" placeholder="Telefone ou WhatsApp"><br>
 
                                 <!--TAG textarea pra mensagem-->
-                                <label for="mensagem">Mensagem</label><br>
-                                <textarea name="mensagem" id="mensagem" rows="5" cols="30" placeholder="Digite sua mensagem"></textarea><br><br>
+                                <label for="mensagemF">Mensagem</label><br>
+                                <textarea name="mensagem" id="mensagemF" rows="5" cols="30" placeholder="Digite sua mensagem"></textarea><br><br>
 
                                 <!--<input type="submit" value="Enviar"><br>-->
                                 <button type="submit">Enviar</button> <br>
@@ -94,5 +94,17 @@
             </div>
 
         </div>
+
+        <!--CODIGO EM php-->
+        <?php
+        //Verifica se o formulário
+        if ($_SERVER["REQUEST"] == "POST"){
+            //Recebe o email enviado pelo formulário
+            $email = $_POST["email"];
+
+            //Mostrar o email recebido
+            echo "E-mail recebido: " . $email;
+        }
+        ?>
     </BODY>
 </HTML>
