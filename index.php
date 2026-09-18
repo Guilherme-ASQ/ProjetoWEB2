@@ -106,10 +106,31 @@
             $mensagem = $_POST["mensagem"];
 
             //Mostrar o email recebido
-            echo "E-mail recebido: " . $email;
+            /*echo "E-mail recebido: " . $email;
             echo "Nome recebido: " . $nome;
             echo "Telefone recebido: " . $telefone;
-            echo "Mensagem recebida: " . $mensagem;
+            echo "Mensagem recebida: " . $mensagem;*/
+
+            //Obtem a conexao configurada no Render
+            $databaseUrl = getenv("DATABASE_URL");
+
+            //Conexão ao PostgreSQL
+            $conexao = pg_connect($databaseUrl);
+
+            //Salva as informações no banco.
+            /*pg_query_params(
+                $conexao,
+                "INSERT INTO usuarios (email) VALUES ($1)",
+                array($email)
+            );*/
+            pg_query_params(
+                $conexao,
+                "INSERT INTO usuarios (nome, email, mensagem, telefone) VALUES ($1, $2, $3, $4)",
+                array($nome, $email, $mensagem, $telefone)
+            );
+
+            //Mostra a confirmação
+            echo "Cadastro realizado com sucesso!";
         }
         ?>
     </BODY>
